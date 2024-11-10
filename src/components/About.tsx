@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Skills } from './Skills'
+import Image from 'next/image'
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -23,7 +24,7 @@ export function About() {
 
         <div className="flex flex-col md:flex-row items-center md:items-start px-4 sm:px-12 md:px-[130px] mt-8 gap-8 md:gap-12">
           <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-64 md:h-64">
-            <img src="/beluga.jpg" alt="Profile" className="rounded-full object-cover w-full h-full border-4 border-white/10 shadow-lg" />
+            <Image src="/beluga.jpg" width={200} height={200} alt="Profile" className="rounded-full object-cover w-full h-full border-4 border-white/10 shadow-lg" />
             <motion.div
               animate={{
                 boxShadow: ['0 0 0 0 rgba(255,255,255,0.1)', '0 0 0 20px rgba(255,255,255,0)'],
@@ -39,18 +40,18 @@ export function About() {
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="w-full md:w-[700px] px-4 sm:px-0">
             <div className="text-justify text-white text-sm sm:text-base leading-relaxed space-y-4">
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
-                Hey there! I'm <span className="font-bold text-blue-400">Nikhil Pulluri</span>, a Full Stack Web3 Developer who's all about building decentralized, modern applications. I love
-                combining front-end and back-end skills with blockchain technology to create secure and scalable solutions that are future-ready.
+                Hey there! I&apos;m <span className="font-bold text-blue-400">Nikhil Pulluri</span>, a Full Stack Web3 Developer who&apos;s all about building decentralized, modern applications. I
+                love combining front-end and back-end skills with blockchain technology to create secure and scalable solutions that are future-ready.
               </motion.p>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-                I'm currently pursuing a BTech in Computer Science and Engineering at SRM University AP, Andhra Pradesh. Along the way, I've dived into JavaScript, React, Node.js, Solidity, Ethereum,
-                and more. What excites me about Web3 is the chance to solve complex challenges and bring innovative ideas to life through smart contracts and decentralized apps (dApps).
+                I&apos;m currently pursuing a BTech in Computer Science and Engineering at SRM University AP, Andhra Pradesh. Along the way, I&apos;ve dived into JavaScript, React, Node.js, Solidity,
+                Ethereum, and more. What excites me about Web3 is the chance to solve complex challenges and bring innovative ideas to life through smart contracts and decentralized apps (dApps).
               </motion.p>
 
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}>
-                When I'm not knee-deep in code, you'll find me geeking out on the latest blockchain trends or tinkering with side projects to sharpen my skills. And when I'm taking a break from tech,
-                you can catch me playing Call of Duty Mobile 😅, cracking DSA problems, or chilling with a good movie.
+                When I&apos;m not knee-deep in code, you&apos;ll find me geeking out on the latest blockchain trends or tinkering with side projects to sharpen my skills. And when I&apos;m taking a
+                break from tech, you can catch me playing Call of Duty Mobile 😅, cracking DSA problems, or chilling with a good movie.
               </motion.p>
             </div>
           </motion.div>
