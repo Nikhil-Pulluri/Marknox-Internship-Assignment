@@ -7,6 +7,8 @@ import { loadSlim } from '@tsparticles/slim'
 
 const ParticleBackground: React.FC = () => {
   const [init, setInit] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const [particleValue, setParticleValue] = useState(600)
 
   // Initialize particles only once
   useEffect(() => {
@@ -16,6 +18,20 @@ const ParticleBackground: React.FC = () => {
     }).then(() => {
       setInit(true)
     })
+  }, [])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768) // Consider 768px as the breakpoint for mobile
+      setParticleValue(200)
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize() // Initial check for window size
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   // Function called when particles are loaded
@@ -326,7 +342,7 @@ const ParticleBackground: React.FC = () => {
                   mode: 'delete',
                   value: 0,
                 },
-                value: 600,
+                value: particleValue,
               },
               opacity: {
                 value: {
