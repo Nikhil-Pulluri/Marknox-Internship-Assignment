@@ -7,13 +7,11 @@ function About() {
     <div className="flex items-center justify-center">
       <div className="h-auto w-5/6 mt-[80px] mb-10 pb-12 p-4 pt-8 bg-[rgba(26,26,26,0)] rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(245,245,245,0.197)]">
         {' '}
-        {/* Keep vertical padding */}
         <center>
           <h1 className="text-white text-4xl md:text-6xl font-bold">About Me</h1>
         </center>
         <div id="profile" className="flex flex-col items-center md:flex-row md:items-start px-[130px] mt-12  gap-12 space-y-6 md:space-y-0">
           {' '}
-          {/* Removed space-x-8 */}
           <div>
             <img className="h-40 w-40 md:h-64 md:w-64 rounded-full" src="/beluga.jpg" alt="meh" />
           </div>
