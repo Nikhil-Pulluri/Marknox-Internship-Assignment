@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 // import { LinearGradient } from 'react-text-gradients'
 // import ParticleBackground from '../Particles/ParticleBackground'
 // import Intro from './Intro'

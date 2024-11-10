@@ -1,11 +1,10 @@
 'use client'
 import React from 'react'
 
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, Label, LabelList, Line, LineChart, PolarAngleAxis, RadialBar, RadialBarChart, Rectangle, ReferenceLine, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, Rectangle, XAxis } from 'recharts'
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
-import { Separator } from '@/components/ui/separator'
+import { Card, CardContent, CardDescription, CardFooter } from '@/components/ui/card'
+import { Chart, ChartTooltip } from '@/components/ui/chart'
 
 export const description = 'A collection of health charts.'
 
@@ -18,7 +17,7 @@ export function Skills() {
         {' '}
         {/* Increased width */}
         <CardContent>
-          <ChartContainer
+          <Chart
             config={{
               steps: {
                 label: 'Steps',
@@ -70,7 +69,7 @@ export function Skills() {
                 }}
               />
             </BarChart>
-          </ChartContainer>
+          </Chart>
         </CardContent>
         <CardFooter className="flex-col items-start gap-1">
           <CardDescription>

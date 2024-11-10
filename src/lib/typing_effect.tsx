@@ -1,18 +1,13 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
-type props = {
+type Props = {
   text: string
   speed: number
   delay: number
 }
 
-function TypingEffect(props: props) {
+function TypingEffect({ text: actualText, speed = 20, delay: startDelay = 500 }: Props) {
   const [text, setText] = useState('')
-
-  const actualText = props.text
-  const speed = props.speed || 20 // Inversely proportional to typing speed
-  const startDelay = props.delay || 500 // Delay before typing starts (in milliseconds)
 
   useEffect(() => {
     const startTyping = () => {
@@ -22,7 +17,7 @@ function TypingEffect(props: props) {
       const typer = () => {
         if (i < actualText.length) {
           temp += actualText.charAt(i)
-          setText((prev) => (prev = temp))
+          setText(temp)
           i++
           setTimeout(typer, speed)
         }
@@ -33,9 +28,8 @@ function TypingEffect(props: props) {
 
     const delayTimeout = setTimeout(startTyping, startDelay)
 
-    // Cleanup function to clear timeout if the component unmounts
     return () => clearTimeout(delayTimeout)
-  }, [])
+  }, [actualText, speed, startDelay])
 
   return <p>{text}</p>
 }

@@ -1,35 +1,20 @@
 import React from 'react'
+import { Code2, ExternalLink } from 'lucide-react'
 
-type props = {
-  project: string
-  desc: string
-  git: string
-}
-
-function Card(props: props) {
+function Card({ project, desc, git }: { project: string; desc: string; git: string }) {
   return (
-    <div className="dark max-w-sm bg-black rounded-md">
-      <a href="#">
-        <img className="rounded-t-lg" src="/testing.jpg" alt="" />
-      </a>
-      <div className="p-5">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{props.project}</h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">{props.desc}</p>
-        <a
-          href={props.git}
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          <div>
-            <img src="/github.png" alt="" style={{ height: '20px', width: '20px', marginRight: '7px' }} />
-          </div>
-          GitHub
-          <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-          </svg>
+    <div className="group relative overflow-hidden rounded-xl bg-black/10 p-6 transition-all duration-300 hover:bg-black/20 hover:shadow-xl">
+      <div className="flex items-center justify-between">
+        <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">{project}</h3>
+        <a href={git} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
+          <Code2 className="h-6 w-6" />
         </a>
       </div>
+      <p className="mt-4 text-gray-300 line-clamp-4">{desc}</p>
+      <a href={git} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center text-sm text-blue-400 hover:text-blue-300 transition-colors duration-300">
+        View Project <ExternalLink className="ml-1 h-4 w-4" />
+      </a>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 blur transition-opacity duration-500 group-hover:opacity-100" />
     </div>
   )
 }

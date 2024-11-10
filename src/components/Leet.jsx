@@ -28,7 +28,7 @@ import {
   // CardTitle,
 } from "@/components/ui/card"
 import {
-  ChartContainer,
+  Chart,
   // ChartTooltip,
   // ChartTooltipContent,
 } from "@/components/ui/chart"
@@ -61,7 +61,7 @@ const LeetCodeProfile = () => {
   return (
     <div className="text-white">
 
-  <Card className="dark max-w-full "> {/* Full width card */}
+  <Card className="rounded-xl bg-black/10 p-6 transition-all duration-300 hover:bg-black/20 hover:shadow-xl max-w-full "> {/* Full width card */}
     <CardContent className="flex flex-col gap-4 p-10">
       <div className="flex flex-col items-center gap-6">
         <div className="text-white text-center font-bold text-xl">LeetCode Profile</div>
@@ -104,7 +104,7 @@ const LeetCodeProfile = () => {
       </div>
 
       {/* Radial Bar Chart */}
-      <ChartContainer
+      <Chart
         config={{
           move: {
             label: "Move",
@@ -150,7 +150,7 @@ const LeetCodeProfile = () => {
           <PolarAngleAxis type="number" domain={[0, 100]} dataKey="value" tick={false} />
           <RadialBar dataKey="value" background cornerRadius={7} />
         </RadialBarChart>
-      </ChartContainer>
+      </Chart>
     </CardContent>
     <div className="text-white text-center pb-6 flex-col gap-3 items-center">
       {/* <div><img src="./leetcode.png" alt="" style={{height: "20px", width: "20px"}}/></div> */}
