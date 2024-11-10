@@ -7,7 +7,7 @@ import { loadSlim } from '@tsparticles/slim'
 
 const ParticleBackground: React.FC = () => {
   const [init, setInit] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+
   const [particleValue, setParticleValue] = useState(600)
 
   // Initialize particles only once
@@ -22,7 +22,7 @@ const ParticleBackground: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768) // Consider 768px as the breakpoint for mobile
+      // Consider 768px as the breakpoint for mobile
       setParticleValue(200)
     }
 
