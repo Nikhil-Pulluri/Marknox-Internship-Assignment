@@ -11,7 +11,9 @@ export const description = 'A collection of health charts.'
 export function Skills() {
   return (
     <div>
-      <div style={{ color: 'white', fontSize: '40px', fontWeight: 'bold' }}>Skills</div>
+      <center>
+        <div style={{ color: 'white', fontSize: '40px', fontWeight: 'bold' }}>Skills</div>
+      </center>
 
       <Card className="dark bg-black-700 w-full max-w-4xl mx-auto shadow-none border-none mt-2" x-chunk="charts-01-chunk-0">
         {' '}
